@@ -142,7 +142,7 @@
   /* Mobile View */
   @media screen and (max-width: 500px) {
     .nav-bar {
-      height: 356px;
+      height: 320px;
     }
 
     .navbar-nav {
