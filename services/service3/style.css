@@ -388,6 +388,20 @@ body {
 
 }
 
+@media screen and (max-width: ) {
+  .footer-distributed .footer-left {
+
+    display: block;
+
+    width: 100%;
+
+    margin-bottom: 40px;
+
+    text-align: certer;
+
+  }
+}
+
 
 
 
