@@ -97,9 +97,9 @@
           <img src="./Assets/Images/aboutme.jpeg" class="img-fluid" alt="">
         </div>
 
-        <p class="py-5 text-body-secondary text-start fs-5 fw-light">I'm Ladi Sudheer Patra, a passionate marketer
+        <p class="py-5 text-body-secondary text-start fs-5 fw-light">I am Ladi Sudheer Patra, a passionate marketeer,
           specializing in growth hacking. With over 7 years of experience and a track record of success with companies
-          like Aakash and Wizoonz.com, I'm here to help drive your business growth and achieve your goals through
+          like Aakash and Wizoonz.com, I am here to help drive your business growth and achieve your goals through
           innovative marketing strategies.<span class="text-warning fw-bold">Let's collaborate and make your business
             thrive!</span>
         </p>
@@ -118,8 +118,8 @@
       <div class="container">
         <div>
           <h2 class="display-5 text-center text-black text-decoration-underline fw-bold">SERVICES</h2>
-          <h5 class="lead text-center text-white mt-4">Go through the marketing services that I offer and feel free to
-            get in touch fur further inquiries and clarification.</h5>
+          <h5 class="lead text-center text-white mt-4">Go through the services that I offer and feel free to
+            get in touch for further inquiries and clarification.</h5>
         </div>
         <div class="services text-center">
           <div class="row">
@@ -130,7 +130,7 @@
               </span>
               <a href="/services/service1/index.html">
                 <button type="button" class="btn btn-light text-warning fw-bold mt-2">See Services</button>
-              </a>  
+              </a>
             </div>
             <div class="services-card col-md-4 mb-4">
               <img src="images/sem.png" alt="service1" class="services-img">
@@ -222,49 +222,64 @@
           <h2 class="display-5 text-center text-black text-decoration-underline fw-bold">Get In Touch</h2>
         </div>
         <div class="container mt-5">
-          <form id="myForm" method="POST">
-            <div class="row mb-2">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="text" class="form-control mb-2" id="name" name="name" placeholder="Name" required>
-                  <div id="nameError" class="error"></div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Company Name" required>
-                  <div id="nameError" class="error"></div>
-                </div>
-              </div>
-            </div>
-            <div class="row mb-2">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="tel" class="form-control mb-2" id="phone" name="phone" placeholder="Phone" required>
-                  <div id="phoneError" class="error"></div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
-                  <div id="emailError" class="error"></div>
-                </div>
-              </div>
-            </div>
-            <div class="form-group mb-4">
-              <textarea class="form-control" id="message" name="message" placeholder="Message" required></textarea>
-              <div id="messageError" class="error"></div>
-            </div>
-            <div class="mb-5 text-end">
-              <button type="submit" class="btn btn-primary p-2 px-5">Submit</button>
+          <form action="#" id="myForm">
+            <label for="username" class="form-label">Name</label>
+            <input name="username" type="text" id="username" placeholder="Your name" class="form-control p-1" required>
 
+            <label for="companyname" class="form-label">Company Name</label>
+            <input name="company_name" type="text" id="company_name" placeholder="Company Name" class="form-control p-1"
+              required>
+
+            <div class="my-1">
+              <label for="email" class="form-label">Email</label>
+              <input name="email" type="email" id="email" placeholder="you@company.com" class="form-control p-1"
+                required>
             </div>
-          </form>
+
+            <div class="my-1">
+              <label for="phonenumber" class="form-label">Phone number</label>
+              <input name="phonenumber" type="tel" id="phonenumber" placeholder="+91 xxxxxxxxxx"
+                class="form-control p-1" required>
+            </div>
+
+            <div class="my-1">
+              <label for="query" class="form-label">How can we help?</label>
+              <textarea name="query" id="query" style="height: 120px" class="form-control p-1"
+                placeholder="Tell us a little about the project"></textarea>
+            </div>
+
+            <div class="ui-check my-1">
+              <label for="form-check" class="form-label">Services</label>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-check">
+                    <input name="services" id="flex-check-1" type="checkbox" class="form-check-input">
+                    <label for="flex-check-1" class="form-label">Growth Hacking</label>
+                  </div>
+                  <div class="form-check">
+                    <input name="services" id="flex-check-2" type="checkbox" class="form-check-input">
+                    <label for="flex-check-2" class="form-label">SEM</label>
+                  </div>
+                  <div class="form-check">
+                    <input name="services" id="flex-check-3" type="checkbox" class="form-check-input">
+                    <label for="flex-check-3" class="form-label">Social Media Marketing</label>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
+
+        <div class="text-center d-grid gap-2">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        </form>
       </div>
+    </div>
     </div>
 
   </section>
+
+
 
   <!-- Footer -->
   <footer class="footer-distributed">
@@ -280,9 +295,9 @@
         <a href="/#Blogs">Blogs</a>
         |
         <a href="/#contact">Contact</a>
-    </p>
+      </p>
 
-      <p class="footer-company-name">Copyright &copy 2021 <strong>Ladi'sMarketing</strong> All rights reserved </p>
+      <p class="footer-company-name">Copyright&copy 2021 <strong>Ladi's Marketing</strong> All rights reserved </p>
     </div>
 
     <div class="footer-center">
@@ -304,7 +319,7 @@
     <div class="footer-right">
       <p class="footer-company-about">
         <span>About the company</span>
-        I'm Ladi Sudheer Patra, a growth hacking and marketing enthusiast with 7+ years of experience. Let's turbocharge
+        I am Ladi Sudheer Patra, a growth hacking and marketing enthusiast with 7+ years of experience. Let's turbocharge
         your business growth together!
       </p>
       <div class="footer-icons">
@@ -318,6 +333,53 @@
     </div>
   </footer>
   <script src="/script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Access the form element
+      var form = document.getElementById("myForm");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Get the form values
+        var username = document.getElementById("username").value;
+        var company_name = document.getElementById("company_name").value;
+        var email = document.getElementById("email").value;
+        var phoneNumber = document.getElementById("phonenumber").value;
+        var query = document.getElementById("query").value;
+
+        var services = [];
+        var checkboxes = document.getElementsByName("services");
+        checkboxes.forEach(function (checkbox) {
+          if (checkbox.checked) {
+            services.push(checkbox.value);
+          }
+        });
+
+        // Prepare the data object
+        var data = {
+          "Name": username,
+          "Company Name": company_name,
+          "Email Id": email,
+          "Phone Number": phoneNumber,
+          "Query": query,
+          "Services": services
+        };
+
+        // Send the data using Axios
+        fetch("https://script.google.com/macros/s/AKfycbynNlomyQvb3qnJ3sif74hzFLKbAFw7qnhqnz4DRIaHU0CDuI98X9JGAgzsoI9BBmRQ/exec", {
+          method: 'POST',
+          data: data
+
+        }).then(function (response) {
+          console.log(response);
+          form.reset();
+        }).catch(function (error) {
+          console.log(error);
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
