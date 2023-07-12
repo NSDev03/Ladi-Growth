@@ -350,14 +350,12 @@
         var phoneNumber = document.getElementById("phonenumber").value;
         var query = document.getElementById("query").value;
 
-        var services = [];
-        var checkboxes = document.getElementsByName("services");
-        checkboxes.forEach(function (checkbox) {
-          if (checkbox.checked) {
-            services.push(checkbox.value);
-          }
-        });
-
+        // var services = [];
+        // var checkboxes = document.getElementsByName("services");
+        // checkboxes.forEach(function (checkbox) {
+        //   if (checkbox.checked) {
+        //     services.push(checkbox.value);
+        //   }
         // Prepare the data object
         var data = {
           "Name": username,
@@ -365,22 +363,25 @@
           "Email Id": email,
           "Phone Number": phoneNumber,
           "Query": query,
-          "Services": services
+          //"Services": services
         };
 
         // Send the data using Axios
-        fetch("https://script.google.com/macros/s/AKfycbynNlomyQvb3qnJ3sif74hzFLKbAFw7qnhqnz4DRIaHU0CDuI98X9JGAgzsoI9BBmRQ/exec", {
+        fetch("https://sheetdb.io/api/v1/gszs6yqepx6qo", {
           method: 'POST',
-          data: data
-
-        }).then(function (response) {
-          console.log(response);
-          form.reset();
-        }).catch(function (error) {
+          headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        }).then(
+          console.log("success")
+        ).catch(function (error) {
           console.log(error);
         });
+        });
       });
-    });
+    //});
   </script>
 </body>
 
