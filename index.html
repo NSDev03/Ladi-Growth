@@ -255,15 +255,15 @@
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-check">
-                    <input name="services" id="flex-check-1" type="checkbox" class="form-check-input">
+                    <input name="services" id="serviceCheckbox" type="checkbox" class="form-check-input">
                     <label for="flex-check-1" class="form-label">Growth Hacking</label>
                   </div>
                   <div class="form-check">
-                    <input name="services" id="flex-check-2" type="checkbox" class="form-check-input">
+                    <input name="services" id="serviceCheckbox" type="checkbox" class="form-check-input">
                     <label for="flex-check-2" class="form-label">SEM</label>
                   </div>
                   <div class="form-check">
-                    <input name="services" id="flex-check-3" type="checkbox" class="form-check-input">
+                    <input name="services" id="serviceCheckbox" type="checkbox" class="form-check-input">
                     <label for="flex-check-3" class="form-label">Social Media Marketing</label>
                   </div>
                 </div>
@@ -272,7 +272,10 @@
         </div>
 
         <div class="text-center d-grid gap-2">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <a href="/thankyou/index.html">
+           <button type="submit" class="btn btn-primary">Submit</button>
+
+          </a>
         </div>
         </form>
       </div>
@@ -349,13 +352,15 @@
         var email = document.getElementById("email").value;
         var phoneNumber = document.getElementById("phonenumber").value;
         var query = document.getElementById("query").value;
+        var serviceCheckbox = document.getElementById("serviceCheckbox").value;
+        
 
-        // var services = [];
-        // var checkboxes = document.getElementsByName("services");
-        // checkboxes.forEach(function (checkbox) {
-        //   if (checkbox.checked) {
-        //     services.push(checkbox.value);
-        //   }
+        var services = [];
+    if (serviceCheckbox.checked) {
+      services.push(serviceCheckbox.value);
+    }
+
+
         // Prepare the data object
         var data = {
           "Name": username,
@@ -363,7 +368,7 @@
           "Email Id": email,
           "Phone Number": phoneNumber,
           "Query": query,
-          //"Services": services
+          "Services": services
         };
 
         // Send the data using Axios
@@ -374,15 +379,16 @@
         'Content-Type': 'application/json'
           },
           body: JSON.stringify(data)
-        }).then(
+        })
+        .then(
           console.log("success")
         ).catch(function (error) {
           console.log(error);
         });
         });
       });
-    //});
   </script>
+
 </body>
 
 </html>
