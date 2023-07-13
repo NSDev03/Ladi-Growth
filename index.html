@@ -177,9 +177,9 @@
             <div class="card">
               <img src="./images/GH.png" class="card-img-top" alt="Blog Post Image">
               <div class="card-body">
-                <h4 class="card-title text-muted fw-bolder">Growth Hacking💥</h4>
-                <p class="card-text text-white fw-medium"> We're here to help you drive
-                  business growth through innovative strategies & cutting-edge techniques</p>
+                <h4 class="card-title text-muted fw-bolder">Growth Hacking</h4>
+                <p class="card-text text-white fw-medium"> Growth hacking is a data-driven and agile approach to marketing 
+                  and business development.It involves using creativity, analytics, and technology to drive growth for your business</p>
                 <a href="blogs/blog1/index.html" class="btn btn-light fw-bold text-warning">Read More</a>
               </div>
             </div>
@@ -190,8 +190,8 @@
               <img src="./images/a3.png" class="card-img-top" alt="Blog Post Image">
               <div class="card-body">
                 <h4 class="card-title text-muted fw-bold">Growth Funnel</h4>
-                <p class="card-text-2 text-white fw-medium">Framework we utilize is the A3R3 Growth Funnel.
-                  Let's dive into how the A3R3 Growth Funnel can revolutionize your business growth strategy! </p>
+                <p class="card-text-2 text-white fw-medium">The A3R3 growth funnel is a framework that helps businesses understand 
+                  how their customers move through the marketing and sales process. It consists of six stages </p>
                 <a href="./blogs/blog2/index.html" class="btn btn-light fw-bold text-warning">Read More</a>
               </div>
             </div>
@@ -201,9 +201,9 @@
             <div class="card">
               <img src="./images/sem.png" class="card-img-top" alt="Blog Post Image">
               <div class="card-body">
-                <h4 class="card-title text-muted fw-bold">Search Engine Marketing (SEM)</h4>
-                <p class="card-text-3 text-white fw-medium">With millions of websites competing for attention, how can
-                  you ensure your business stands out over SEM?</p>
+                <h4 class="card-title text-muted fw-bold">SEM</h4>
+                <p class="card-text-3 text-white fw-medium">Search Engine Marketing is a digital marketing strategy that 
+                  focuses on increasing a website's visibility in search engine results pages (SERPs) through paid advertising.</p>
                 <a href="./blogs/blog3/index.html" class="btn btn-light fw-bold text-warning">Read More</a>
               </div>
             </div>
@@ -255,16 +255,16 @@
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-check">
-                    <input name="services" id="serviceCheckbox" type="checkbox" class="form-check-input">
-                    <label for="flex-check-1" class="form-label">Growth Hacking</label>
+                    <input name="services" id="growthHackingCheckbox" type="checkbox" class="form-check-input">
+                    <label for="growthHackingCheckbox" class="form-label">Growth Hacking</label>
                   </div>
                   <div class="form-check">
-                    <input name="services" id="serviceCheckbox" type="checkbox" class="form-check-input">
-                    <label for="flex-check-2" class="form-label">SEM</label>
+                    <input name="services" id="semCheckbox" type="checkbox" class="form-check-input">
+                    <label for="semCheckbox" class="form-label">SEM</label>
                   </div>
                   <div class="form-check">
-                    <input name="services" id="serviceCheckbox" type="checkbox" class="form-check-input">
-                    <label for="flex-check-3" class="form-label">Social Media Marketing</label>
+                    <input name="services" id="socialMediaCheckbox" type="checkbox" class="form-check-input">
+                    <label for="socialMediaCheckbox" class="form-label">Social Media Marketing</label>
                   </div>
                 </div>
               </div>
@@ -351,13 +351,22 @@
         var email = document.getElementById("email").value;
         var phoneNumber = document.getElementById("phonenumber").value;
         var query = document.getElementById("query").value;
-        var serviceCheckbox = document.getElementById("serviceCheckbox");
+        var growthHackingCheckbox = document.getElementById("growthHackingCheckbox");
+        var semCheckbox = document.getElementById("semCheckbox");
+        var socialMediaCheckbox = document.getElementById("socialMediaCheckbox");
         
 
         var services = [];
-    if (serviceCheckbox.checked) {
-      services.push(serviceCheckbox.value);
-    }
+        if (growthHackingCheckbox.checked) {
+        services.push(growthHackingCheckbox.value);
+        }
+        if (semCheckbox.checked) {
+        services.push(semCheckbox.value);
+          }
+        if (socialMediaCheckbox.checked) {
+        services.push(socialMediaCheckbox.value);
+        }
+    
 
 
         // Prepare the data object
@@ -367,7 +376,8 @@
           "Email Id": email,
           "Phone Number": phoneNumber,
           "Query": query,
-          "Services": services
+          "Services": services.join(", ") // Convert services array to a comma-separated string
+    
         };
 
         // Send the data using Axios
@@ -387,12 +397,12 @@
         } else {
           console.log("Error submitting data");
         }
-      })
-      .catch(function (error) {
+        })
+        .catch(function (error) {
         console.log("Error:", error);
         });
-        });
       });
+    });
   </script>
 
 </body>
