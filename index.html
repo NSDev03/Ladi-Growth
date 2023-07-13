@@ -345,16 +345,13 @@
       form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        // Redirect to the thank you page
-      window.location.href = "/thankyou/index.html";
-
         // Get the form values
         var username = document.getElementById("username").value;
         var company_name = document.getElementById("company_name").value;
         var email = document.getElementById("email").value;
         var phoneNumber = document.getElementById("phonenumber").value;
         var query = document.getElementById("query").value;
-        var serviceCheckbox = document.getElementById("serviceCheckbox").value;
+        var serviceCheckbox = document.getElementById("serviceCheckbox");
         
 
         var services = [];
@@ -382,10 +379,17 @@
           },
           body: JSON.stringify(data)
         })
-        .then(
-          console.log("success")
-        ).catch(function (error) {
-          console.log(error);
+        .then(function (response) {
+        if (response.ok) {
+          console.log("Data successfully submitted");
+          // Redirect to the thank you page
+          window.location.href = "/thankyou/index.html";
+        } else {
+          console.log("Error submitting data");
+        }
+      })
+      .catch(function (error) {
+        console.log("Error:", error);
         });
         });
       });
