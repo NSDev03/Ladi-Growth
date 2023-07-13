@@ -274,7 +274,6 @@
         <div class="text-center d-grid gap-2">
           <a href="/thankyou/index.html">
            <button type="submit" class="btn btn-primary">Submit</button>
-
           </a>
         </div>
         </form>
@@ -345,6 +344,9 @@
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();
+
+        // Redirect to the thank you page
+      window.location.href = "/thankyou/index.html";
 
         // Get the form values
         var username = document.getElementById("username").value;
